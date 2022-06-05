@@ -8,6 +8,7 @@ import javax.swing.*;
 
 public class NotePad extends JFrame implements ActionListener, WindowListener{
 JTextArea jta=new JTextArea();
+
 	File fnameContainer;
 	
 	public NotePad(){
@@ -17,9 +18,10 @@ JTextArea jta=new JTextArea();
 		Container con=getContentPane();
 		
 		JMenuBar jmb=new JMenuBar();
-		JMenu jmfile = new JMenu("File");
-		JMenu jmedit = new JMenu("Edit");
-		JMenu jmhelp = new JMenu("Help");
+		JMenu jmfile  = new JMenu("File");
+		JMenu jmedit  = new JMenu("Edit");
+		JMenu jmhelp  = new JMenu("Help");
+		JMenu jmtheme = new JMenu("Theme");
 		
 		con.setLayout(new BorderLayout());
 		//trying to add scrollbar
@@ -45,10 +47,15 @@ JTextArea jta=new JTextArea();
 		createMenuItem(jmedit,"Paste");
 		
 		createMenuItem(jmhelp,"About Notepad");
+
+		createMenuItem(jmtheme,"Dark Mode");
+		createMenuItem(jmtheme,"Light Mode");
+
 		
 		jmb.add(jmfile);
 		jmb.add(jmedit);
 		jmb.add(jmhelp);
+		jmb.add(jmtheme);
 		
 		setJMenuBar(jmb);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("notepad.gif"));
@@ -126,6 +133,12 @@ JTextArea jta=new JTextArea();
 			JOptionPane.showMessageDialog(this,"Created by: Rangadurai","Notepad",JOptionPane.INFORMATION_MESSAGE);
 		}else if(e.getActionCommand().equals("Cut")){
 			jta.cut();
+		}else if(e.getActionCommand().equals("Dark Mode")){
+			jta.setForeground(Color.white);
+			jta.setBackground(Color.black);
+		}else if(e.getActionCommand().equals("Light Mode")){
+			jta.setForeground(Color.black);
+			jta.setBackground(Color.white);
 		}
 	}
 	

@@ -7,8 +7,8 @@ public class EditableNotepadEx implements ActionListener
 {  
     JFrame frm;  
     JMenuBar mnubr;  
-    JMenu fileMenu, editMenu, helpMenu;  
-    JMenuItem cutItem, copyItem, pasteItem, selectAll,saveItem;  
+    JMenu fileMenu, editMenu, helpMenu,themeMenu;  
+    JMenuItem cutItem, copyItem, pasteItem, selectAll,saveItem,darkMode,lightMode;  
     JTextArea txtarea;  
     EditableNotepadEx()  
     {  
@@ -17,24 +17,33 @@ public class EditableNotepadEx implements ActionListener
         saveItem = new JMenuItem("Save");
         copyItem = new JMenuItem("copyItem");  
         pasteItem = new JMenuItem("pasteItem");  
-        selectAll = new JMenuItem("selectAllItem");  
+        selectAll = new JMenuItem("selectAllItem");
+        darkMode = new JMenuItem("Dark Mode");
+        lightMode = new JMenuItem("light Mode");
+
         copyItem.addActionListener(this);  
         cutItem.addActionListener(this);  
         selectAll.addActionListener(this);  
         pasteItem.addActionListener(this);  
         mnubr = new JMenuBar();  
-        mnubr.setBounds(5, 5, 460, 40);  
+        mnubr.setBounds(5, 5, 860, 40);  
         fileMenu = new JMenu("File");  
         editMenu = new JMenu("Edit");  
         helpMenu = new JMenu("Help");  
+        themeMenu = new JMenu("Theme");  
+
         fileMenu.add(saveItem);
         editMenu.add(cutItem);  
         editMenu.add(copyItem);  
         editMenu.add(pasteItem);  
-        editMenu.add(selectAll);  
+        editMenu.add(selectAll);
+        
+        themeMenu.add(darkMode);
+        themeMenu.add(lightMode);
         mnubr.add(fileMenu);  
         mnubr.add(editMenu);  
-        mnubr.add(helpMenu);  
+        mnubr.add(helpMenu); 
+        mnubr.add(themeMenu); 
         txtarea = new JTextArea();  
         txtarea.setBounds(10, 30, 460, 460);  
         frm.add(mnubr);  
@@ -75,7 +84,5 @@ public class EditableNotepadEx implements ActionListener
         //if(ae.getSource() == saveItem)
 //           savefile();
  
-    } 
-
-   
+    }       
 }

@@ -1,11 +1,8 @@
 
+    public class MyApp {
 
-
-
-public class MyApp {
-
-    public static void main(String [] args){
-    
-    NotePad notp=new NotePad();
-}
+        public static void main(String [] args){
+        
+        NotePad Note=new NotePad();
+    }
 }
