@@ -3,6 +3,8 @@
 
         public static void main(String [] args){
         
+
+        
         NotePad Note=new NotePad();
     }
 }
