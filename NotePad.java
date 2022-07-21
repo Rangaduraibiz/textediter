@@ -12,8 +12,6 @@ JTextArea jta=new JTextArea();
 	File fnameContainer;
 	
 	public NotePad(){
-            
-
 		Font fnt=new Font("Arial",Font.PLAIN,15);
 		Container con=getContentPane();
 		
